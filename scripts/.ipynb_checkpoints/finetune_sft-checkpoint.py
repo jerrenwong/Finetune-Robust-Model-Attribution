@@ -54,17 +54,6 @@ TEST_QUESTIONS_PATH = "models & generations/hc3_questions_test.json"
 # ==========================================
 
 def train_model(model_name, dataset_path):
-    # Check if already trained
-    model_short_name = MODEL_SHORT_NAMES.get(model_name, model_name.replace("/", "_"))
-    dataset_filename = os.path.basename(dataset_path)
-    dataset_name = os.path.splitext(dataset_filename)[0]
-    final_output_dir = os.path.join(OUTPUT_BASE_DIR, model_short_name, dataset_name)
-
-    if os.path.exists(os.path.join(final_output_dir, "adapter_model.safetensors")) or \
-       os.path.exists(os.path.join(final_output_dir, "adapter_model.bin")):
-        print(f"Model already trained at {final_output_dir}. Skipping.")
-        return
-
     print(f"\n{'='*50}")
     print(f"Starting training for model: {model_name}")
     print(f"Dataset: {dataset_path}")
