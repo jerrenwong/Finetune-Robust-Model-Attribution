@@ -1,0 +1,12 @@
+{
+  "target_model": "llama",
+  "test_file": "classifiers/dataset/full_225_test.jsonl",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_llama_mixed_0_225/best",
+  "positive_acc": 0.80925,
+  "negative_acc": 0.9085,
+  "overall_score": 0.858875,
+  "per_model": {
+    "llama": 0.80925,
+    "qwen": 0.9085
+  }
+}

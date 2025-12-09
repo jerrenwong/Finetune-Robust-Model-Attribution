@@ -1,0 +1,11 @@
+{
+  "target_model": "qwen",
+  "test_file": "models & generations/uncensored_llama/hc3_questions_test.json",
+  "checkpoint_dir": "classifiers/checkpoints/bert_classifier_mixed_0_375/best",
+  "positive_acc": 0.0,
+  "negative_acc": 0.959,
+  "overall_score": 0.4795,
+  "per_model": {
+    "llama": 0.959
+  }
+}

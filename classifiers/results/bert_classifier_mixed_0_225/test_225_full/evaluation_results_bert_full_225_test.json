@@ -1,0 +1,12 @@
+{
+  "target_model": "qwen",
+  "test_file": "classifiers/dataset/full_225_test.jsonl",
+  "checkpoint_dir": "classifiers/checkpoints/bert_classifier_mixed_0_225/best",
+  "positive_acc": 0.91275,
+  "negative_acc": 0.60625,
+  "overall_score": 0.7595,
+  "per_model": {
+    "llama": 0.60625,
+    "qwen": 0.91275
+  }
+}

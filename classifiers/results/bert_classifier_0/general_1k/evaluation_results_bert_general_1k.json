@@ -1,0 +1,11 @@
+{
+  "target_model": "qwen",
+  "test_file": "models & generations/uncensored_llama/general_1k.json",
+  "checkpoint_dir": "classifiers/checkpoints/bert_classifier_0/best",
+  "positive_acc": 0.0,
+  "negative_acc": 0.416,
+  "overall_score": 0.208,
+  "per_model": {
+    "llama": 0.416
+  }
+}

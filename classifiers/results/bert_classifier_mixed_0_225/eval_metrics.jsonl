@@ -1,0 +1,11 @@
+{"global_step": 249, "epoch": 1, "overall": 0.6739999999999999, "positive": 0.947, "negative": 0.401, "per_model": {"qwen": 0.947, "llama": 0.401}}
+{"global_step": 498, "epoch": 1, "overall": 0.6625, "positive": 0.979, "negative": 0.346, "per_model": {"qwen": 0.979, "llama": 0.346}}
+{"global_step": 747, "epoch": 1, "overall": 0.697, "positive": 0.962, "negative": 0.432, "per_model": {"qwen": 0.962, "llama": 0.432}}
+{"global_step": 996, "epoch": 1, "overall": 0.6819999999999999, "positive": 0.983, "negative": 0.381, "per_model": {"qwen": 0.983, "llama": 0.381}}
+{"global_step": 1245, "epoch": 1, "overall": 0.687, "positive": 0.977, "negative": 0.397, "per_model": {"qwen": 0.977, "llama": 0.397}}
+{"global_step": 1494, "epoch": 1, "overall": 0.712, "positive": 0.971, "negative": 0.453, "per_model": {"qwen": 0.971, "llama": 0.453}}
+{"global_step": 1743, "epoch": 1, "overall": 0.7335, "positive": 0.958, "negative": 0.509, "per_model": {"qwen": 0.958, "llama": 0.509}}
+{"global_step": 1992, "epoch": 1, "overall": 0.6739999999999999, "positive": 0.983, "negative": 0.365, "per_model": {"qwen": 0.983, "llama": 0.365}}
+{"global_step": 2241, "epoch": 1, "overall": 0.7435, "positive": 0.908, "negative": 0.579, "per_model": {"qwen": 0.908, "llama": 0.579}}
+{"global_step": 2490, "epoch": 1, "overall": 0.6675, "positive": 0.988, "negative": 0.347, "per_model": {"qwen": 0.988, "llama": 0.347}}
+{"global_step": 2498, "epoch": 1, "overall": 0.7035, "positive": 0.972, "negative": 0.435, "per_model": {"qwen": 0.972, "llama": 0.435}}

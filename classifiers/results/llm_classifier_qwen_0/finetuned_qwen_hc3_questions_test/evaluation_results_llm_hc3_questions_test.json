@@ -1,0 +1,11 @@
+{
+  "target_model": "qwen",
+  "test_file": "models & generations/finetuned_qwen/hc3_questions_test.json",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_qwen_0/best",
+  "positive_acc": 0.371,
+  "negative_acc": 0.0,
+  "overall_score": 0.1855,
+  "per_model": {
+    "qwen": 0.371
+  }
+}

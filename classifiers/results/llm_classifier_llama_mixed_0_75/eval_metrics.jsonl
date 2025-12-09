@@ -1,0 +1,11 @@
+{"global_step": 1002, "epoch": 1, "overall": 0.7205, "positive": 0.507, "negative": 0.934, "per_model": {"qwen": 0.934, "llama": 0.507}}
+{"global_step": 2004, "epoch": 1, "overall": 0.7384999999999999, "positive": 0.526, "negative": 0.951, "per_model": {"qwen": 0.951, "llama": 0.526}}
+{"global_step": 3006, "epoch": 1, "overall": 0.8105, "positive": 0.692, "negative": 0.929, "per_model": {"qwen": 0.929, "llama": 0.692}}
+{"global_step": 4008, "epoch": 1, "overall": 0.7785, "positive": 0.593, "negative": 0.964, "per_model": {"qwen": 0.964, "llama": 0.593}}
+{"global_step": 5010, "epoch": 1, "overall": 0.837, "positive": 0.736, "negative": 0.938, "per_model": {"qwen": 0.938, "llama": 0.736}}
+{"global_step": 6012, "epoch": 1, "overall": 0.833, "positive": 0.703, "negative": 0.963, "per_model": {"qwen": 0.963, "llama": 0.703}}
+{"global_step": 7014, "epoch": 1, "overall": 0.8205, "positive": 0.683, "negative": 0.958, "per_model": {"qwen": 0.958, "llama": 0.683}}
+{"global_step": 8016, "epoch": 1, "overall": 0.8095, "positive": 0.642, "negative": 0.977, "per_model": {"qwen": 0.977, "llama": 0.642}}
+{"global_step": 9018, "epoch": 1, "overall": 0.8305, "positive": 0.69, "negative": 0.971, "per_model": {"qwen": 0.971, "llama": 0.69}}
+{"global_step": 10020, "epoch": 1, "overall": 0.8195, "positive": 0.66, "negative": 0.979, "per_model": {"qwen": 0.979, "llama": 0.66}}
+{"global_step": 10025, "epoch": 1, "overall": 0.8195, "positive": 0.66, "negative": 0.979, "per_model": {"qwen": 0.979, "llama": 0.66}}

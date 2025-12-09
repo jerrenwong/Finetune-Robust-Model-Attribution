@@ -1,0 +1,9 @@
+{
+  "overall": 0.829,
+  "positive": 0.9625,
+  "negative": 0.6955,
+  "per_model": {
+    "qwen": 0.9625,
+    "llama": 0.6955
+  }
+}

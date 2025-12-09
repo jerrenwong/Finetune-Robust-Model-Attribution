@@ -1,0 +1,11 @@
+{
+  "target_model": "llama",
+  "test_file": "models & generations/uncensored_llama/general_1k.json",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_llama_0/best",
+  "positive_acc": 0.798,
+  "negative_acc": 0.0,
+  "overall_score": 0.399,
+  "per_model": {
+    "llama": 0.798
+  }
+}
