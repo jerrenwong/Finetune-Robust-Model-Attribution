@@ -133,6 +133,14 @@ def plot_accuracy_over_time(classifier_type, results_dir, output_dir=None):
     time_steps = [0, 75, 225, 375]
     line_styles = ['-', '--', '-.', ':']  # solid, dashed, dashdot, dotted
 
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    timestep_colors = {
+        0: '#000000',   # Black
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
+    }
+
     # Get data for this classifier type
     data_by_time_step = get_classifier_data(classifier_type, results_dir)
 
@@ -143,14 +151,12 @@ def plot_accuracy_over_time(classifier_type, results_dir, output_dir=None):
     # Create the plot
     plt.figure(figsize=(12, 6))
 
-    # Use a single color for all lines
-    color = 'blue'
-
-    # Plot each time step with different line style
+    # Plot each time step with different color and line style
     for i, time_step in enumerate(time_steps):
         if time_step in data_by_time_step:
             data = data_by_time_step[time_step]
             line_style = line_styles[i % len(line_styles)]
+            color = timestep_colors[time_step]
             label = f'Time Step {time_step}'
             plt.plot(
                 data['steps'],
@@ -158,6 +164,7 @@ def plot_accuracy_over_time(classifier_type, results_dir, output_dir=None):
                 linestyle=line_style,
                 color=color,
                 linewidth=2,
+                alpha=0.95,
                 label=label
             )
 
@@ -200,12 +207,12 @@ def plot_overlay_all_classifiers(results_dir, output_dir=None):
     if output_dir is None:
         output_dir = results_dir
 
-    # NeurIPS color scheme (colorblind-friendly)
-    # Using colors that are commonly used in NeurIPS papers
-    neurips_colors = {
-        'bert': '#1f77b4',    # Blue
-        'qwen': '#ff7f0e',    # Orange
-        'llama': '#2ca02c'    # Green
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    timestep_colors = {
+        0: '#000000',   # Black
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
     }
 
     # Define time steps and line styles
@@ -224,17 +231,17 @@ def plot_overlay_all_classifiers(results_dir, output_dir=None):
     # Plot each classifier type
     for classifier_type in classifier_types:
         data_by_time_step = all_data[classifier_type]
-        color = neurips_colors[classifier_type]
 
         if not data_by_time_step:
             print(f"Warning: No data found for {classifier_type} classifiers")
             continue
 
-        # Plot each time step with different line style
+        # Plot each time step with different color and line style
         for i, time_step in enumerate(time_steps):
             if time_step in data_by_time_step:
                 data = data_by_time_step[time_step]
                 line_style = line_styles[i % len(line_styles)]
+                color = timestep_colors[time_step]
                 label = f'{classifier_type.upper()} - Time Step {time_step}'
                 plt.plot(
                     data['steps'],
@@ -242,6 +249,7 @@ def plot_overlay_all_classifiers(results_dir, output_dir=None):
                     linestyle=line_style,
                     color=color,
                     linewidth=2,
+                    alpha=0.95,
                     label=label
                 )
 

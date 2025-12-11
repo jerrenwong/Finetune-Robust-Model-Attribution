@@ -142,19 +142,26 @@ def plot_training_loss_grid(results_dir, output_file=None):
         'llama': 'Llama'
     }
 
-    # NeurIPS color scheme (colorblind-friendly, professional)
-    # Base colors for each classifier type
-    neurips_colors = {
-        'bert': '#1f77b4',    # Blue
-        'qwen': '#ff7f0e',    # Orange
-        'llama': '#2ca02c'    # Green
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    # Map training types to timesteps and colors
+    training_type_to_timestep = {
+        'pure_0': 0,
+        'mixed_0_75': 75,
+        'mixed_0_225': 225,
+        'mixed_0_375': 375
     }
-
-    # Trend line color (darker version of base color)
-    trend_colors = {
-        'bert': '#0d4a8c',    # Darker blue
-        'qwen': '#cc6600',    # Darker orange
-        'llama': '#1e7e1e'    # Darker green
+    timestep_colors = {
+        0: '#000000',   # Black
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
+    }
+    # Create darker versions for trend lines
+    timestep_trend_colors = {
+        0: '#000000',   # Black (same)
+        75: '#0e5fc7',  # Darker blue
+        225: '#ccaa00', # Darker yellow
+        375: '#c92535'  # Darker red
     }
 
     # Create figure with 4 rows x 3 columns
@@ -185,9 +192,10 @@ def plot_training_loss_grid(results_dir, output_file=None):
                 ax.set_yticks([])
                 continue
 
-            # Get colors for this classifier type
-            base_color = neurips_colors[classifier_type]
-            trend_color = trend_colors[classifier_type]
+            # Get colors for this training type (based on timestep)
+            timestep = training_type_to_timestep[training_type]
+            base_color = timestep_colors[timestep]
+            trend_color = timestep_trend_colors[timestep]
 
             # Calculate adaptive window size (~5% of data points, min 50, max 500)
             window_size = max(50, min(500, int(len(losses) * 0.05)))
@@ -199,7 +207,7 @@ def plot_training_loss_grid(results_dir, output_file=None):
             ax.plot(steps, losses, linewidth=0.5, alpha=0.3, color=base_color, label='Raw Loss')
 
             # Plot trend line (darker, thicker)
-            ax.plot(steps, trend_losses, linewidth=2, alpha=0.9, color=trend_color, label='Trend')
+            ax.plot(steps, trend_losses, linewidth=2, alpha=0.95, color=trend_color, label='Trend')
 
             # Set log scale on y-axis
             ax.set_yscale('log')

@@ -183,15 +183,18 @@ def main():
     x_pos = np.arange(len(timesteps))
     width = 0.65
 
-    colors = {
-        'bert': '#2E86AB',
-        'qwen': '#A23B72',
-        'llama': '#F18F01'
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    timestep_colors = {
+        0: '#000000',   # Black
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
     }
+    bar_colors = [timestep_colors[step] for step in timesteps]
 
     ax1 = axes[0]
-    bars1 = ax1.bar(x_pos, bert_overall_acc, width, color=colors['bert'],
-                    alpha=0.9, edgecolor='white', linewidth=2.0, zorder=3)
+    bars1 = ax1.bar(x_pos, bert_overall_acc, width, color=bar_colors,
+                    alpha=0.95, edgecolor='white', linewidth=2.0, zorder=3)
 
     ax1.set_xlabel('Classifier', fontsize=13, fontweight='bold', labelpad=10)
     ax1.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold', labelpad=10)
@@ -215,8 +218,8 @@ def main():
                      f'{height:.1f}', ha='center', va='bottom', fontsize=11, fontweight='bold')
 
     ax2 = axes[1]
-    bars2 = ax2.bar(x_pos, qwen_overall_acc, width, color=colors['qwen'],
-                    alpha=0.9, edgecolor='white', linewidth=2.0, zorder=3)
+    bars2 = ax2.bar(x_pos, qwen_overall_acc, width, color=bar_colors,
+                    alpha=0.95, edgecolor='white', linewidth=2.0, zorder=3)
 
     ax2.set_xlabel('Classifier', fontsize=13, fontweight='bold', labelpad=10)
     ax2.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold', labelpad=10)
@@ -240,8 +243,8 @@ def main():
                      f'{height:.1f}', ha='center', va='bottom', fontsize=11, fontweight='bold')
 
     ax3 = axes[2]
-    bars3 = ax3.bar(x_pos, llama_overall_acc, width, color=colors['llama'],
-                    alpha=0.9, edgecolor='white', linewidth=2.0, zorder=3)
+    bars3 = ax3.bar(x_pos, llama_overall_acc, width, color=bar_colors,
+                    alpha=0.95, edgecolor='white', linewidth=2.0, zorder=3)
 
     ax3.set_xlabel('Classifier', fontsize=13, fontweight='bold', labelpad=10)
     ax3.set_ylabel('Accuracy (%)', fontsize=13, fontweight='bold', labelpad=10)

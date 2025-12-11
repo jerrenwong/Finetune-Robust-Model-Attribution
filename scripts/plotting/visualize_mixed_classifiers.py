@@ -109,7 +109,14 @@ def plot_mixed_accuracy_over_time(classifier_type, results_dir, output_dir=None)
     # Define mixed variants and line styles
     mixed_variants = ['0_75', '0_225', '0_375']
     line_styles = ['-', '--', '-.']  # solid, dashed, dashdot
-    colors = ['#1f77b4', '#ff7f0e', '#2ca02c']  # Blue, Orange, Green
+
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    # For mixed variants, use color based on the second timestep
+    timestep_colors = {
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
+    }
 
     # Get data for this classifier type
     data_by_variant = get_mixed_classifier_data(classifier_type, results_dir)
@@ -126,7 +133,9 @@ def plot_mixed_accuracy_over_time(classifier_type, results_dir, output_dir=None)
         if variant in data_by_variant:
             data = data_by_variant[variant]
             line_style = line_styles[i % len(line_styles)]
-            color = colors[i % len(colors)]
+            # Extract second timestep from variant (e.g., '0_75' -> 75)
+            second_timestep = int(variant.split('_')[1])
+            color = timestep_colors[second_timestep]
             # Format label: "0+75" instead of "0_75"
             label_parts = variant.split('_')
             label = f'Mixed {label_parts[0]}+{label_parts[1]}'
@@ -139,7 +148,7 @@ def plot_mixed_accuracy_over_time(classifier_type, results_dir, output_dir=None)
                 label=label,
                 marker='o',
                 markersize=3,
-                alpha=0.8
+                alpha=0.95
             )
 
     # Customize plot
@@ -180,11 +189,12 @@ def plot_overlay_all_mixed_classifiers(results_dir, output_dir=None):
     if output_dir is None:
         output_dir = results_dir
 
-    # NeurIPS color scheme (colorblind-friendly)
-    neurips_colors = {
-        'bert': '#1f77b4',    # Blue
-        'qwen': '#ff7f0e',    # Orange
-        'llama': '#2ca02c'    # Green
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    # For mixed variants, use color based on the second timestep
+    timestep_colors = {
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
     }
 
     # Define mixed variants and line styles
@@ -203,17 +213,19 @@ def plot_overlay_all_mixed_classifiers(results_dir, output_dir=None):
     # Plot each classifier type
     for classifier_type in classifier_types:
         data_by_variant = all_data[classifier_type]
-        base_color = neurips_colors[classifier_type]
 
         if not data_by_variant:
             print(f"Warning: No data found for {classifier_type} mixed classifiers")
             continue
 
-        # Plot each mixed variant with different line style
+        # Plot each mixed variant with different line style and color
         for i, variant in enumerate(mixed_variants):
             if variant in data_by_variant:
                 data = data_by_variant[variant]
                 line_style = line_styles[i % len(line_styles)]
+                # Extract second timestep from variant (e.g., '0_75' -> 75)
+                second_timestep = int(variant.split('_')[1])
+                color = timestep_colors[second_timestep]
                 # Format label: "BERT - Mixed 0+75" instead of "bert_0_75"
                 label_parts = variant.split('_')
                 label = f'{classifier_type.upper()} - Mixed {label_parts[0]}+{label_parts[1]}'
@@ -221,12 +233,12 @@ def plot_overlay_all_mixed_classifiers(results_dir, output_dir=None):
                     data['steps'],
                     data['accuracies'],
                     linestyle=line_style,
-                    color=base_color,
+                    color=color,
                     linewidth=2,
                     label=label,
                     marker='o',
                     markersize=2,
-                    alpha=0.8
+                    alpha=0.95
                 )
 
     # Customize plot

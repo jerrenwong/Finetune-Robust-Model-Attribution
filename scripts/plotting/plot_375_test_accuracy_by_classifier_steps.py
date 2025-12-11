@@ -92,7 +92,14 @@ def main():
     fig, axes = plt.subplots(1, 3, figsize=(16, 6))
     fig.patch.set_facecolor('white')
 
-    colors = ['#2E86AB', '#A23B72', '#F18F01', '#06A77D']
+    # Color scheme: 0=black, 75=blue, 225=yellow, 375=red
+    timestep_colors = {
+        0: '#000000',   # Black
+        75: '#137efb',  # Blue
+        225: '#fed032', # Yellow
+        375: '#fc3042'  # Red
+    }
+    colors = [timestep_colors[step] for step in [0, 75, 225, 375]]
     legend_labels = {
         'BERT': [r'$B_0$', r'$B_{75}$', r'$B_{225}$', r'$B_{375}$'],
         'Qwen_LLM': [r'$Q_0$', r'$Q_{75}$', r'$Q_{225}$', r'$Q_{375}$'],
@@ -109,7 +116,7 @@ def main():
                 accuracies = classifier_data[step]['accuracies']
                 if len(steps) > 0 and len(accuracies) > 0:
                     ax.plot(steps, accuracies,
-                           color=colors[line_idx], linewidth=2.5, alpha=0.85,
+                           color=colors[line_idx], linewidth=2.5, alpha=0.95,
                            marker='o', markersize=6,
                            label=legend_labels[classifier_type][line_idx], zorder=3)
 
