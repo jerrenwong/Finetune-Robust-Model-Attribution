@@ -1,4 +1,4 @@
-# FiRMA: Finetune-Robust Model Attribution
+# Finetune-Robust Model Attribution
 
 This repository contains the code and results for our MIT 6.7960 Deep Learning final project.
 
