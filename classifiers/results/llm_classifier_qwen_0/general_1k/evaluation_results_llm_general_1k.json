@@ -1,0 +1,11 @@
+{
+  "target_model": "qwen",
+  "test_file": "models & generations/uncensored_qwen/general_1k.json",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_qwen_0/best",
+  "positive_acc": 0.73,
+  "negative_acc": 0.0,
+  "overall_score": 0.365,
+  "per_model": {
+    "qwen": 0.73
+  }
+}

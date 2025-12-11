@@ -1,0 +1,10 @@
+{"global_step": 1000, "epoch": 1, "overall": 0.501, "positive": 1.0, "negative": 0.002, "per_model": {"qwen": 1.0, "llama": 0.002}}
+{"global_step": 2000, "epoch": 1, "overall": 0.505, "positive": 0.978, "negative": 0.032, "per_model": {"qwen": 0.978, "llama": 0.032}}
+{"global_step": 3000, "epoch": 1, "overall": 0.5025, "positive": 1.0, "negative": 0.005, "per_model": {"qwen": 1.0, "llama": 0.005}}
+{"global_step": 4000, "epoch": 1, "overall": 0.516, "positive": 0.993, "negative": 0.039, "per_model": {"qwen": 0.993, "llama": 0.039}}
+{"global_step": 5000, "epoch": 1, "overall": 0.5165, "positive": 0.994, "negative": 0.039, "per_model": {"qwen": 0.994, "llama": 0.039}}
+{"global_step": 6000, "epoch": 1, "overall": 0.5285, "positive": 0.988, "negative": 0.069, "per_model": {"qwen": 0.988, "llama": 0.069}}
+{"global_step": 7000, "epoch": 1, "overall": 0.5395, "positive": 0.978, "negative": 0.101, "per_model": {"qwen": 0.978, "llama": 0.101}}
+{"global_step": 8000, "epoch": 1, "overall": 0.516, "positive": 0.997, "negative": 0.035, "per_model": {"qwen": 0.997, "llama": 0.035}}
+{"global_step": 9000, "epoch": 1, "overall": 0.5195, "positive": 0.994, "negative": 0.045, "per_model": {"qwen": 0.994, "llama": 0.045}}
+{"global_step": 10000, "epoch": 1, "overall": 0.521, "positive": 0.992, "negative": 0.05, "per_model": {"qwen": 0.992, "llama": 0.05}}

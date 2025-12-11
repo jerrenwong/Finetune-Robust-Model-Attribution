@@ -1,0 +1,11 @@
+{
+  "target_model": "qwen",
+  "test_file": "models & generations/uncensored_qwen/malicious_1k.json",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_qwen_mixed_0_225/best",
+  "positive_acc": 0.43,
+  "negative_acc": 0.0,
+  "overall_score": 0.215,
+  "per_model": {
+    "qwen": 0.43
+  }
+}

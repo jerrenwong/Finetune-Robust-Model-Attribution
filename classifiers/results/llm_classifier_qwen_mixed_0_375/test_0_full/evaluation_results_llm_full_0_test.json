@@ -1,0 +1,12 @@
+{
+  "target_model": "qwen",
+  "test_file": "classifiers/dataset/full_0_test.jsonl",
+  "checkpoint_dir": "classifiers/checkpoints/llm_classifier_qwen_mixed_0_375/best",
+  "positive_acc": 0.98625,
+  "negative_acc": 0.99675,
+  "overall_score": 0.9915,
+  "per_model": {
+    "qwen": 0.98625,
+    "llama": 0.99675
+  }
+}

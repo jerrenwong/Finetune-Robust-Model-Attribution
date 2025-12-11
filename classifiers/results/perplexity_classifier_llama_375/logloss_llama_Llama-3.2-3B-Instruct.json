@@ -1,0 +1,48 @@
+{
+  "base_model": "models/Llama-3.2-3B-Instruct",
+  "target_model": "llama",
+  "optimal_threshold_loss": 25.399084967535895,
+  "optimization_score": 0.5045999999999999,
+  "train_loss_stats": {
+    "mean": 21.102759308624268,
+    "median": 23.671875,
+    "std": 7.585133963070236,
+    "min": 0.058013916015625,
+    "max": 35.21875
+  },
+  "test_loss_stats": {
+    "mean": 20.07926623535156,
+    "median": 24.796875,
+    "std": 9.03313794305751,
+    "min": 0.08843994140625,
+    "max": 35.25
+  },
+  "train_results": {
+    "overall": 0.5046,
+    "precision": 0.5038684719535783,
+    "recall": 0.59915,
+    "f1": 0.547393906171486,
+    "positive": 0.59915,
+    "negative": 0.41005,
+    "per_model": {
+      "llama": 0.59915,
+      "qwen": 0.41005
+    },
+    "threshold": 25.399084967535895
+  },
+  "test_results": {
+    "overall": 0.447125,
+    "precision": 0.45001181753722524,
+    "recall": 0.476,
+    "f1": 0.4626412343579152,
+    "positive": 0.476,
+    "negative": 0.41825,
+    "per_model": {
+      "llama": 0.476,
+      "qwen": 0.41825
+    },
+    "threshold": 25.399084967535895
+  },
+  "train_violin_plot_path": "classifiers/results/perplexity_classifier_llama_375/logloss_violin_train_llama_Llama-3.2-3B-Instruct.png",
+  "test_violin_plot_path": "classifiers/results/perplexity_classifier_llama_375/logloss_violin_test_llama_Llama-3.2-3B-Instruct.png"
+}

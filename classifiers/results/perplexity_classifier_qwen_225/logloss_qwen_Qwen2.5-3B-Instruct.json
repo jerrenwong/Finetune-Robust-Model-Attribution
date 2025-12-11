@@ -1,0 +1,48 @@
+{
+  "base_model": "models/Qwen2.5-3B-Instruct",
+  "target_model": "qwen",
+  "optimal_threshold_loss": 1.1576373126055743,
+  "optimization_score": 0.56275,
+  "train_loss_stats": {
+    "mean": 12.881235252380371,
+    "median": 14.2265625,
+    "std": 4.91689933455761,
+    "min": 0.09869384765625,
+    "max": 29.484375
+  },
+  "test_loss_stats": {
+    "mean": 11.425850227355957,
+    "median": 12.859375,
+    "std": 5.404964786329,
+    "min": 0.0904541015625,
+    "max": 27.328125
+  },
+  "train_results": {
+    "overall": 0.56275,
+    "precision": 0.8984126984126984,
+    "recall": 0.1415,
+    "f1": 0.24449244060475162,
+    "positive": 0.1415,
+    "negative": 0.984,
+    "per_model": {
+      "llama": 0.984,
+      "qwen": 0.1415
+    },
+    "threshold": 1.1576373126055743
+  },
+  "test_results": {
+    "overall": 0.573375,
+    "precision": 0.7388120423108218,
+    "recall": 0.227,
+    "f1": 0.3472939376553834,
+    "positive": 0.227,
+    "negative": 0.91975,
+    "per_model": {
+      "llama": 0.91975,
+      "qwen": 0.227
+    },
+    "threshold": 1.1576373126055743
+  },
+  "train_violin_plot_path": "classifiers/results/perplexity_classifier_qwen_225/logloss_violin_train_qwen_Qwen2.5-3B-Instruct.png",
+  "test_violin_plot_path": "classifiers/results/perplexity_classifier_qwen_225/logloss_violin_test_qwen_Qwen2.5-3B-Instruct.png"
+}
